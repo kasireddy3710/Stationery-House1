@@ -1,0 +1,2092 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offers & Seasonal Deals | Stationery House</title>
+
+    <!-- Google Fonts: Heritage Serif & Clean Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/0d7221de-f61b-4b2c-b4a9-3c72b104271d.jpg">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-body: #faf7f2;
+            --bg-card: #ffffff;
+            --bg-surface: #f4eee2;
+            --header-bg: rgba(255, 255, 255, 0.96);
+            --header-text: #111827;
+            --header-link: #374151;
+            --footer-bg: #efe7d8;
+            --footer-text: #1b1c20;
+            --footer-muted: #5e594f;
+            --text-main: #1c1d1f;
+            --text-muted: #6a665e;
+            --royal-navy: #0e1726;
+            --gold-primary: #c99330;
+            --gold-light: #e8b85b;
+            --gold-soft: #fcf4e3;
+            --gold-border: rgba(201, 147, 48, 0.35);
+            --gold-shadow: rgba(201, 147, 48, 0.22);
+            --border-soft: #e7dfd1;
+            --btn-bg: rgba(201, 147, 48, 0.12);
+            --btn-text: #1b1c20;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --transition-smooth: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        /* DARK THEME - Updates Body, Header, and Footer */
+        body.dark {
+            --bg-body: #0a101a;
+            --bg-card: #141d2c;
+            --bg-surface: #182335;
+            --header-bg: rgba(10, 16, 26, 0.97);
+            --header-text: #ffffff;
+            --header-link: #e2ded5;
+            --footer-bg: #070c14;
+            --footer-text: #f0ede6;
+            --footer-muted: #9aa8ba;
+            --text-main: #f0ede6;
+            --text-muted: #a6b2c0;
+            --border-soft: #233145;
+            --gold-soft: rgba(201, 147, 48, 0.14);
+            --btn-bg: rgba(255, 255, 255, 0.08);
+            --btn-text: #f7eedc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.65;
+            overflow-x: hidden;
+            transition: var(--transition-smooth);
+        }
+
+        h1, h2, h3, h4, .font-serif {
+            font-family: 'Playfair Display', Georgia, serif;
+            letter-spacing: -0.01em;
+        }
+
+        .font-royal {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 1.5px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button, input, textarea, select {
+            font: inherit;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: min(1220px, 92%);
+            margin: auto;
+        }
+
+        .vintage-ornament {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--gold-primary);
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            margin-bottom: 14px;
+        }
+
+        .vintage-ornament::before,
+        .vintage-ornament::after {
+            content: "❖";
+            font-size: 10px;
+            color: var(--gold-light);
+        }
+
+        /* ================= NAVBAR ================= */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: var(--header-bg);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-soft);
+            transition: var(--transition-smooth);
+        }
+
+        .nav-container {
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #dfb743, #b8821f);
+            color: #0c1522;
+            display: grid;
+            place-items: center;
+            font-size: 22px;
+            box-shadow: 0 6px 20px var(--gold-shadow);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            flex-shrink: 0;
+        }
+
+        .logo-text {
+            color: var(--header-text);
+            font-size: 21px;
+            font-weight: 800;
+            line-height: 1.1;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            transition: color 0.3s ease;
+        }
+
+        .logo-text span {
+            color: var(--gold-primary);
+        }
+
+        .logo-text small {
+            display: block;
+            color: var(--text-muted);
+            font-size: 9.5px;
+            letter-spacing: 2px;
+            margin-top: 4px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-transform: uppercase;
+        }
+
+        /* ================= NAV LINKS & DROPDOWN ================= */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-links > .nav-item > a {
+            position: relative;
+            color: var(--header-link);
+            font-size: 14.5px;
+            font-weight: 600;
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: var(--transition-smooth);
+            letter-spacing: 0.3px;
+        }
+
+        .nav-links > .nav-item > a:hover,
+        .nav-links > .nav-item > a.active {
+            color: var(--gold-primary);
+        }
+
+        .nav-links > .nav-item > a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 2px;
+            width: 0;
+            height: 2px;
+            border-radius: 4px;
+            background: linear-gradient(90deg, var(--gold-light), var(--gold-primary));
+            transition: var(--transition-smooth);
+        }
+
+        .nav-links > .nav-item > a:hover::after,
+        .nav-links > .nav-item > a.active::after {
+            width: 100%;
+        }
+
+        /* Dropdown Indicators and Transitions */
+        .dropdown-chevron {
+            font-size: 11px;
+            transition: transform 0.3s ease, color 0.3s ease;
+            color: var(--text-muted);
+        }
+
+        .nav-item.has-dropdown:hover .dropdown-chevron,
+        .nav-item.has-dropdown.active-drop .dropdown-chevron {
+            transform: rotate(180deg);
+            color: var(--gold-primary);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            min-width: 260px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-soft);
+            border-radius: var(--radius-md);
+            padding: 10px;
+            list-style: none;
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.14);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(12px);
+            transition: var(--transition-smooth);
+            z-index: 1100;
+        }
+
+        /* Subtle Pointer Arrow */
+        .dropdown-menu::before {
+            content: "";
+            position: absolute;
+            top: -6px;
+            left: 20px;
+            width: 11px;
+            height: 11px;
+            background: var(--bg-card);
+            border-top: 1px solid var(--border-soft);
+            border-left: 1px solid var(--border-soft);
+            transform: rotate(45deg);
+        }
+
+        .nav-item.has-dropdown:hover .dropdown-menu,
+        .nav-item.has-dropdown:focus-within .dropdown-menu,
+        .nav-item.has-dropdown.active-drop .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 14px;
+            border-radius: 8px;
+            color: var(--text-main);
+            transition: var(--transition-smooth);
+        }
+
+        .dropdown-item i {
+            width: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: var(--gold-primary);
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown-item .item-texts strong {
+            display: block;
+            font-size: 13.5px;
+            font-weight: 600;
+            line-height: 1.25;
+        }
+
+        .dropdown-item .item-texts small {
+            display: block;
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 2px;
+            line-height: 1.2;
+        }
+
+        .dropdown-item:hover {
+            background: var(--gold-soft);
+            color: var(--gold-primary);
+            transform: translateX(4px);
+        }
+
+        .dropdown-item:hover i {
+            transform: scale(1.15);
+        }
+
+        /* ================= NAV ACTIONS ================= */
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .theme-btn, .direction-btn {
+            background: var(--btn-bg);
+            color: var(--btn-text);
+            border: 1px solid var(--gold-border);
+            border-radius: 8px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 14px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+        }
+
+        .theme-btn:hover, .direction-btn:hover {
+            background: rgba(201, 147, 48, 0.25);
+            color: var(--gold-primary);
+            border-color: var(--gold-primary);
+        }
+
+        .shop-btn {
+            background: linear-gradient(135deg, #dfb743, #c58e23);
+            color: #0d1624;
+            padding: 10px 22px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 13.5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 6px 18px rgba(201, 147, 48, 0.35);
+            transition: var(--transition-smooth);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .shop-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(201, 147, 48, 0.5);
+            filter: brightness(1.08);
+        }
+
+        .menu-btn {
+            display: none;
+            background: transparent;
+            color: var(--header-text);
+            font-size: 24px;
+        }
+
+        /* ================= 5-CLIP ANIMATED PROMO SLIDER ================= */
+        .slider-section {
+            position: relative;
+            height: 675px;
+            overflow: hidden;
+            background: #090f19;
+            color: #fff;
+            padding-top: 90px;
+        }
+
+        .slider-track {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1), transform 0.9s ease;
+            transform: scale(1.05);
+            display: flex;
+            align-items: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+        }
+
+        .slide-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            filter: brightness(1.4);
+            z-index: 1;
+        }
+
+        .slide-overlay {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 60% 40%, rgba(201, 147, 48, 0.15), transparent 70%),
+                        linear-gradient(to right, rgba(9, 15, 25, 0.96) 20%, rgba(9, 15, 25, 0.65) 65%, rgba(9, 15, 25, 0.92) 100%);
+            z-index: 2;
+        }
+
+        .slide-content {
+            position: relative;
+            z-index: 3;
+            max-width: 8200px;
+            padding-left: 20px;
+        }
+
+        .offer-tag-banner {
+            display: inline-block;
+            background: #d63031;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 6px 14px;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 15px rgba(214, 48, 49, 0.4);
+        }
+
+        .slide-title {
+            font-size: clamp(38px, 5.5vw, 64px);
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: #ffffff;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.6);
+        }
+
+        .slide-title span {
+            color: var(--gold-light);
+            font-style: italic;
+        }
+
+        .slide-desc {
+            font-size: 17.5px;
+            color: #e2ded5;
+            max-width: 640px;
+            margin-bottom: 32px;
+        }
+
+        .slider-actions {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .primary-btn {
+            background: linear-gradient(135deg, #dfb743, #c58e23);
+            color: #0c1524;
+            padding: 13px 28px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition-smooth);
+            box-shadow: 0 8px 24px rgba(201, 147, 48, 0.35);
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(201, 147, 48, 0.55);
+            background: linear-gradient(135deg, #ebc75b, #d89f30);
+        }
+
+        .secondary-btn {
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(8px);
+            color: #fff;
+            padding: 13px 26px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition-smooth);
+        }
+
+        .secondary-btn:hover {
+            background: #ffffff;
+            color: #0c1524;
+        }
+
+        
+
+        .slider-prev { left: 25px; }
+        .slider-next { right: 25px; }
+
+        .slider-dots {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            gap: 12px;
+        }
+
+        .slider-dot {
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.35);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .slider-dot.active {
+            background: var(--gold-light);
+            transform: scale(1.25);
+            border: 2px solid #ffffff;
+        }
+
+        /* ================= VOUCHER STRIP ================= */
+        .voucher-bar {
+            background: var(--bg-surface);
+            border-bottom: 1px solid var(--border-soft);
+            padding: 22px 0;
+        }
+
+        .voucher-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .voucher-card {
+            background: var(--bg-card);
+            border: 1px dashed var(--gold-primary);
+            padding: 16px 20px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .voucher-info strong {
+            display: block;
+            font-size: 15px;
+            color: var(--text-main);
+        }
+
+        .voucher-info span {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .voucher-code {
+            background: var(--gold-soft);
+            color: var(--gold-primary);
+            font-weight: 700;
+            font-size: 13px;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            border: 1px solid var(--gold-border);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* ================= FILTER & PRODUCTS ================= */
+        .section {
+            padding: 85px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 45px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(32px, 4vw, 44px);
+            color: var(--text-main);
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 15.5px;
+        }
+
+        .filter-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-tab {
+            padding: 10px 20px;
+            border-radius: 30px;
+            background: var(--bg-card);
+            color: var(--text-muted);
+            font-size: 13px;
+            font-weight: 600;
+            border: 1px solid var(--border-soft);
+            transition: var(--transition-smooth);
+        }
+
+        .filter-tab:hover,
+        .filter-tab.active {
+            background: var(--gold-primary);
+            color: #0c1524;
+            border-color: var(--gold-primary);
+            box-shadow: 0 4px 15px var(--gold-shadow);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .product-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-soft);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-7px);
+            border-color: var(--gold-primary);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.1);
+        }
+
+        .discount-badge {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: #d63031;
+            color: #ffffff;
+            font-size: 10.5px;
+            font-weight: 800;
+            padding: 5px 10px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            z-index: 3;
+            box-shadow: 0 3px 8px rgba(214, 48, 49, 0.35);
+        }
+
+        .product-img-wrap {
+            height: 320px;
+            position: relative;
+            overflow: hidden;
+            background: #ede8dc;
+        }
+
+        .product-img-wrap img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .product-card:hover .product-img-wrap img {
+            transform: scale(1.06);
+        }
+
+        .quick-view-btn {
+            position: absolute;
+            right: 14px;
+            top: 14px;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--royal-navy);
+            display: grid;
+            place-items: center;
+            opacity: 0;
+            transform: scale(0.85);
+            transition: var(--transition-smooth);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            z-index: 3;
+        }
+
+        .product-card:hover .quick-view-btn {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .quick-view-btn:hover {
+            background: var(--gold-primary);
+            color: #fff;
+        }
+
+        .product-body {
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .product-cat {
+            color: var(--gold-primary);
+            font-size: 10.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 5px;
+        }
+
+        .product-title {
+            font-size: 18.5px;
+            color: var(--text-main);
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .product-desc {
+            color: var(--text-muted);
+            font-size: 13px;
+            margin-bottom: 16px;
+            flex: 1;
+            line-height: 1.5;
+        }
+
+        .product-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 15px;
+            border-top: 1px dashed var(--border-soft);
+        }
+
+        .price-box {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+
+        .product-price {
+            font-size: 21px;
+            font-weight: 700;
+            color: var(--gold-primary);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .old-price {
+            font-size: 14px;
+            color: var(--text-muted);
+            text-decoration: line-through;
+        }
+
+        .deal-btn {
+            background: var(--gold-primary);
+            color: #0c1524;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 12.5px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: var(--transition-smooth);
+        }
+
+        .deal-btn:hover {
+            background: #dca337;
+            transform: translateY(-2px);
+        }
+
+        /* ================= FOOTER ================= */
+        footer {
+            background: var(--footer-bg);
+            color: var(--footer-text);
+            padding-top: 80px;
+            border-top: 3px solid var(--gold-primary);
+            transition: var(--transition-smooth);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 45px;
+            padding-bottom: 55px;
+        }
+
+        .footer-brand p {
+            color: var(--footer-muted);
+            font-size: 14px;
+            margin: 18px 0 22px;
+            max-width: 320px;
+        }
+
+        .footer-grid h4 {
+            font-size: 18px;
+            margin-bottom: 22px;
+            color: var(--gold-primary);
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-grid h4::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 35px;
+            height: 2px;
+            background: var(--gold-primary);
+        }
+
+        .footer-links a, .footer-contact p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--footer-muted);
+            font-size: 14px;
+            margin-bottom: 12px;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-primary);
+            transform: translateX(4px);
+        }
+
+        .footer-contact i {
+            color: var(--gold-primary);
+            width: 18px;
+        }
+
+        .social-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-link {
+            width: 38px;
+            height: 38px;
+            border-radius: 8px;
+            background: rgba(201, 147, 48, 0.1);
+            border: 1px solid var(--gold-border);
+            color: var(--gold-primary);
+            display: grid;
+            place-items: center;
+            font-size: 14px;
+            transition: var(--transition-smooth);
+        }
+
+        .social-link:hover {
+            background: var(--gold-primary);
+            color: #0c1524;
+            transform: translateY(-3px);
+        }
+
+        .copyright-bar {
+            border-top: 1px solid var(--border-soft);
+            padding: 24px 0;
+            color: var(--footer-muted);
+            font-size: 13px;
+        }
+
+        .copyright-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* BACK TO TOP */
+        .back-to-top {
+            width: 44px;
+            height: 44px;
+            background: var(--gold-primary);
+            color: #0c1524;
+            border-radius: 50%;
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 999;
+            display: grid;
+            place-items: center;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+            transition: var(--transition-smooth);
+        }
+
+        .back-to-top:hover {
+            background: var(--gold-light);
+            transform: translateY(-3px);
+        }
+
+        /* MODALS & TOAST */
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(7, 12, 19, 0.82);
+            backdrop-filter: blur(6px);
+            display: none;
+            place-items: center;
+            z-index: 3000;
+            padding: 20px;
+        }
+
+        .modal.show {
+            display: grid;
+        }
+
+        .modal-card {
+            width: min(520px, 100%);
+            max-height: 88vh;
+            overflow-y: auto;
+            background: var(--bg-card);
+            color: var(--text-main);
+            padding: 38px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--gold-border);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            background: transparent;
+            font-size: 26px;
+            color: var(--text-muted);
+        }
+
+        .toast-msg {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            background: #0e1726;
+            color: #ffffff;
+            border: 1px solid var(--gold-primary);
+            padding: 14px 22px;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            transform: translateY(80px);
+            opacity: 0;
+            z-index: 4000;
+            transition: var(--transition-smooth);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .toast-msg.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* RTL ADJUSTMENTS */
+        html[dir="rtl"] body {
+            direction: rtl;
+        }
+
+        html[dir="rtl"] .dropdown-menu {
+            left: auto;
+            right: 0;
+        }
+
+        html[dir="rtl"] .dropdown-menu::before {
+            left: auto;
+            right: 20px;
+        }
+
+        html[dir="rtl"] .dropdown-item:hover {
+            transform: translateX(-4px);
+        }
+
+        html[dir="rtl"] .discount-badge {
+            left: auto;
+            right: 14px;
+        }
+
+        html[dir="rtl"] .quick-view-btn {
+            right: auto;
+            left: 14px;
+        }
+
+        html[dir="rtl"] .footer-grid h4::after {
+            left: auto;
+            right: 0;
+        }
+
+        html[dir="rtl"] .back-to-top {
+            right: auto;
+            left: 20px;
+        }
+
+        /* RESPONSIVE */
+        @media(max-width: 1050px) {
+            .nav-links {
+                display: none;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .nav-links.mobile-open {
+                position: absolute;
+                top: 90px;
+                left: 0;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                background: var(--bg-card);
+                padding: 25px 30px;
+                gap: 15px;
+                border-bottom: 2px solid var(--gold-border);
+                max-height: calc(100vh - 90px);
+                overflow-y: auto;
+            }
+
+            /* Accordion dropdown behavior on tablet/mobile */
+            .nav-item.has-dropdown {
+                width: 100%;
+            }
+
+            .nav-item.has-dropdown > .nav-link {
+                justify-content: space-between;
+                width: 100%;
+            }
+
+            .dropdown-menu {
+                position: static;
+                transform: none !important;
+                box-shadow: none;
+                border: 1px solid var(--border-soft);
+                background: var(--bg-surface);
+                display: none;
+                opacity: 1;
+                visibility: visible;
+                margin-top: 8px;
+                padding: 6px;
+                width: 100%;
+            }
+
+            .dropdown-menu::before {
+                display: none;
+            }
+
+            .nav-item.has-dropdown.mobile-open-drop .dropdown-menu {
+                display: block;
+            }
+
+            .nav-item.has-dropdown.mobile-open-drop .dropdown-chevron {
+                transform: rotate(180deg);
+                color: var(--gold-primary);
+            }
+
+            .product-grid, .voucher-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width: 680px) {
+            .nav-container {
+                height: 80px;
+            }
+
+            .nav-links.mobile-open {
+                top: 80px;
+                max-height: calc(100vh - 80px);
+            }
+
+            .slider-section {
+                height: 660px;
+            }
+
+            .product-grid, .voucher-grid, .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .slider-btn {
+                display: none;
+            }
+
+            .copyright-flex {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html#home" class="logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+                <div class="logo-text">
+                    <span>Stationery</span> House
+                    <small>School Books & Supplies</small>
+                </div>
+            </a>
+
+            <!-- NAVIGATION ITEMS -->
+            <nav class="nav-links" id="navLinks">
+                
+                <!-- HOME DROPDOWN -->
+                <div class="nav-item has-dropdown" id="homeDropdown">
+                    <a href="http://127.0.0.1:5500/index.html" class="nav-link" id="homeToggle" aria-haspopup="true" aria-expanded="false">
+                        <span>Home</span>
+                        <i class="fa-solid fa-chevron-down dropdown-chevron"></i>
+                    </a>
+                    <ul class="dropdown-menu" aria-label="Home Navigation Links">
+                        <li>
+                            <a href="http://127.0.0.1:5500/index.html" class="dropdown-item">
+                                <i class="fa-solid fa-home"></i>
+                                <div class="item-texts">
+                                    <strong>Home-1</strong>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://127.0.0.1:5500/home2.html" class="dropdown-item">
+                                <i class="fa-solid fa-home"></i>
+                                <div class="item-texts">
+                                    <strong>Home-2</strong>
+                                    
+                                </div>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+
+                <div class="nav-item">
+                    <a href="http://127.0.0.1:5500/about.html" class="nav-link">About</a>
+                </div>
+                <div class="nav-item">
+                    <a href="http://127.0.0.1:5500/stationery.html" class="nav-link">Stationery</a>
+                </div>
+                
+                <div class="nav-item">
+                    <a href="http://127.0.0.1:5500/offers.html" class="nav-link active">Offers</a>
+                </div>
+                <div class="nav-item">
+                    <a href="http://127.0.0.1:5500/contact.html" class="nav-link">Contact</a>
+                </div>
+                <div class="nav-item">
+                    <a href="http://127.0.0.1:5500/dashboard.html" class="nav-link">Dashboard</a>
+                </div>
+            </nav>
+
+            <!-- NAV ACTIONS -->
+            <div class="nav-actions">
+                <button class="theme-btn" id="themeBtn" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <button class="direction-btn" id="directionBtn" aria-label="Toggle RTL">
+                    <span>RTL</span>
+                </button>
+
+                <a href="#special-offers" class="shop-btn">
+                    <span>Shop Now</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+                <button class="menu-btn" id="menuBtn" aria-label="Open Mobile Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= 5-CLIP ANIMATED PROMO SLIDER ================= -->
+    <section class="slider-section" id="offers">
+        <div class="slider-track" id="sliderTrack">
+
+            <!-- SLIDE 1: Back to School Mega Fest -->
+            <div class="slide active">
+                <div class="slide-bg" style="background-image: url('https://static.vecteezy.com/system/resources/thumbnails/043/033/446/small_2x/close-up-of-a-weathered-old-book-with-wildflowers-growing-from-its-spine-photo.jpg');"></div>
+                <div class="slide-overlay"></div>
+                <div class="container slide-content">
+                    <span class="offer-tag-banner">Up To 35% Off</span><br>
+                    <span class="vintage-ornament">Curated Academic Library</span>
+                    <h1 class="slide-title">
+                        Academic Term <span>Textbook Carnival</span>
+                    </h1>
+                    <p class="slide-desc">
+                        Enjoy deep discounts on board-certified CBSE, ICSE, and State Syllabus textbooks. Save on comprehensive reference bundles and foundation question banks.
+                    </p>
+                    <div class="slider-actions">
+                        <a href="#special-offers" class="primary-btn">
+                            Browse Discounted Books <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 2: School Bags Special -->
+            <div class="slide">
+                <div class="slide-bg" style="background-image: url('https://tse4.mm.bing.net/th/id/OIP.HRE8Sj1RQ1mBzAmUmTGL0AHaE7?r=0&w=626&h=417&rs=1&pid=ImgDetMain&o=7&rm=3');"></div>
+                <div class="slide-overlay"></div>
+                <div class="container slide-content">
+                    <span class="offer-tag-banner">Flat 25% Off</span><br>
+                    <span class="vintage-ornament">Ergonomic Comfort</span>
+                    <h1 class="slide-title">
+                        Heavy-Duty <span>Scholar Backpacks</span>
+                    </h1>
+                    <p class="slide-desc">
+                        Reinforced stitch, waterproof canvas, and cushioned orthopedic spinal supports designed to effortlessly bear heavy academic loads.
+                    </p>
+                    <div class="slider-actions">
+                        <a href="#special-offers" class="primary-btn">
+                            Explore Bag Offers <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 3: Signature Pens -->
+            <div class="slide">
+                <div class="slide-bg" style="background-image: url('https://th.bing.com/th/id/OIP.BapQtsF-DyBhceUCqQMJgAHaE7?r=0&o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3');"></div>
+                <div class="slide-overlay"></div>
+                <div class="container slide-content">
+                    <span class="offer-tag-banner">Buy 2 Get 1 Free</span><br>
+                    <span class="vintage-ornament">Craftsmanship in Every Stroke</span>
+                    <h1 class="slide-title">
+                        Artisan Writing <span>Pen Sets</span>
+                    </h1>
+                    <p class="slide-desc">
+                        From 24K gold-plated nib fountain pens to smooth micro-tip executive rollers, elevate every handwritten manuscript with regal elegance.
+                    </p>
+                    <div class="slider-actions">
+                        <a href="#special-offers" class="primary-btn">
+                            Claim Pen Offers <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            
+        <!-- Slider Arrows -->
+        <button class="slider-btn slider-prev" id="sliderPrev" aria-label="Previous Slide">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="slider-btn slider-next" id="sliderNext" aria-label="Next Slide">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <!-- Slider Dots -->
+        <div class="slider-dots" id="sliderDots">
+            <span class="slider-dot active" data-slide="0"></span>
+            <span class="slider-dot" data-slide="1"></span>
+            <span class="slider-dot" data-slide="2"></span>
+            
+        </div>
+    </section>
+
+    <!-- ================= VOUCHER CODES STRIP ================= -->
+    <div class="voucher-bar">
+        <div class="container voucher-grid">
+            <div class="voucher-card">
+                <div class="voucher-info">
+                    <strong>SCHOLAR20</strong>
+                    <span>Flat 20% off all school textbook orders</span>
+                </div>
+                <button class="voucher-code copy-code" data-code="SCHOLAR20">
+                    <i class="fa-regular fa-copy"></i> Copy
+                </button>
+            </div>
+            <div class="voucher-card">
+                <div class="voucher-info">
+                    <strong>BAGSFREE</strong>
+                    <span>Get ₹200 off ergonomic school backpacks</span>
+                </div>
+                <button class="voucher-code copy-code" data-code="BAGSFREE">
+                    <i class="fa-regular fa-copy"></i> Copy
+                </button>
+            </div>
+            <div class="voucher-card">
+                <div class="voucher-info">
+                    <strong>ARTGUILD</strong>
+                    <span>Extra 15% off fine art & geometry sets</span>
+                </div>
+                <button class="voucher-code copy-code" data-code="ARTGUILD">
+                    <i class="fa-regular fa-copy"></i> Copy
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= 15 OFFER ITEMS (3 EACH CATEGORY) ================= -->
+    <section class="section" id="special-offers">
+        <div class="container">
+            <div class="section-header">
+                <span class="vintage-ornament">Curated Academic Discounts</span>
+                <h2>Exclusive Season Specials</h2>
+                <p>Limited-time discounted prices on school curriculum books, durable luggage, writing pens, geometry gear, and fine art supplies.</p>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="filter-wrapper">
+                <button class="filter-tab active" data-filter="all">All Deals (15)</button>
+                <button class="filter-tab" data-filter="books">School Books (3)</button>
+                <button class="filter-tab" data-filter="bags">School Bags (3)</button>
+                <button class="filter-tab" data-filter="pens">Pen Sets (3)</button>
+                <button class="filter-tab" data-filter="geometry">Geometry Boxes (3)</button>
+                <button class="filter-tab" data-filter="arts">Color Arts (3)</button>
+            </div>
+
+            <div class="product-grid" id="productGrid">
+
+                <!-- 1. BOOKS - Item 1 -->
+                <article class="product-card" data-category="books">
+                    <span class="discount-badge">25% OFF</span>
+                    <div class="product-img-wrap">
+                        <img src="https://www.kepler-act.com/wp-content/uploads/2025/12/1765100395-1024x944.png" alt="Comprehensive Mathematics Vol X">
+                        <button class="quick-view-btn" data-title="Comprehensive Mathematics Vol. X" data-price="285" data-img="https://www.kepler-act.com/wp-content/uploads/2025/12/1765100395-1024x944.png">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="product-body">
+                        <span class="product-cat">School Books</span>
+                        <h3 class="product-title">Comprehensive Mathematics Vol. X</h3>
+                        <p class="product-desc">Board exam oriented solved equations, formulas, and past ten-year papers.</p>
+                        <div class="product-footer">
+                            <div class="price-box">
+                                <span class="product-price">₹285</span>
+                                <span class="old-price">₹380</span>
+                            </div>
+                            <button class="deal-btn claim-offer" data-title="Comprehensive Mathematics Vol. X">
+                                <i class="fa-solid fa-tag"></i> Claim Deal
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 1. BOOKS - Item 2 -->
+                <article class="product-card" data-category="books">
+                    <span class="discount-badge">20% OFF</span>
+                    <div class="product-img-wrap">
+                        <img src="https://media.karousell.com/media/photos/products/2024/10/7/principles_of_physics_10ed_int_1728264463_0060d519_progressive.jpg" alt="Principles of Physics & Mechanics">
+                        <button class="quick-view-btn" data-title="Principles of Physics & Mechanics" data-price="336" data-img="https://media.karousell.com/media/photos/products/2024/10/7/principles_of_physics_10ed_int_1728264463_0060d519_progressive.jpg">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="product-body">
+                        <span class="product-cat">School Books</span>
+                        <h3 class="product-title">Principles of Physics & Mechanics</h3>
+                        <p class="product-desc">Kinematics, thermodynamics, and optics with color plates and practical lab guides.</p>
+                        <div class="product-footer">
+                            <div class="price-box">
+                                <span class="product-price">₹336</span>
+                                <span class="old-price">₹420</span>
+                            </div>
+                            <button class="deal-btn claim-offer" data-title="Principles of Physics & Mechanics">
+                                <i class="fa-solid fa-tag"></i> Claim Deal
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 1. BOOKS - Item 3 -->
+                <article class="product-card" data-category="books">
+                    <span class="discount-badge">30% OFF</span>
+                    <div class="product-img-wrap">
+                        <img src="https://tse3.mm.bing.net/th/id/OIP.Q_e2B-_X5oCu9X_RBJyHYAHaHm?r=0&w=1080&h=1109&rs=1&pid=ImgDetMain&o=7&rm=3" alt="World History & Civilization Atlas">
+                        <button class="quick-view-btn" data-title="World History & Civilization Atlas" data-price="238" data-img="https://tse3.mm.bing.net/th/id/OIP.Q_e2B-_X5oCu9X_RBJyHYAHaHm?r=0&w=1080&h=1109&rs=1&pid=ImgDetMain&o=7&rm=3">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="product-body">
+                        <span class="product-cat">School Books</span>
+                        <h3 class="product-title">World History & Civilization Atlas</h3>
+                        <p class="product-desc">Full-color geopolitical maps, timeline summaries, and chronological historical accounts.</p>
+                        <div class="product-footer">
+                            <div class="price-box">
+                                <span class="product-price">₹238</span>
+                                <span class="old-price">₹340</span>
+                            </div>
+                            <button class="deal-btn claim-offer" data-title="World History & Civilization Atlas">
+                                <i class="fa-solid fa-tag"></i> Claim Deal
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 2. SCHOOL BAGS - Item 1 -->
+                <article class="product-card" data-category="bags">
+                    <span class="discount-badge">30% OFF</span>
+                    <div class="product-img-wrap">
+                        <img src="https://tse2.mm.bing.net/th/id/OIP.ieznWEPItIXquVhA200OxQHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Heavy-Duty Canvas Backpack">
+                        <button class="quick-view-btn" data-title="Heavy-Duty Canvas Scholar Backpack" data-price="623" data-img="https://tse2.mm.bing.net/th/id/OIP.ieznWEPItIXquVhA200OxQHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="product-body">
+                        <span class="product-cat">School Bags</span>
+                        <h3 class="product-title">Heavy-Duty Canvas Scholar Backpack</h3>
+                        <p class="product-desc">Multi-tier book organizer, waterproof rain lining, and triple padded shoulder strap.</p>
+                        <div class="product-footer">
+                            <div class="price-box">
+                                <span class="product-price">₹623</span>
+                                <span class="old-price">₹890</span>
+                            </div>
+                            <button class="deal-btn claim-offer" data-title="Heavy-Duty Canvas Scholar Backpack">
+                                <i class="fa-solid fa-tag"></i> Claim Deal
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 2. SCHOOL BAGS - Item 2 -->
+                <article class="product-card" data-category="bags">
+                    <span class="discount-badge">20% OFF</span>
+                    <div class="product-img-wrap">
+                        <img src="https://tse4.mm.bing.net/th/id/OIP.6skDIPIDsM5Ut5iWe9yauAHaHa?r=0&w=1000&h=1000&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Oxford Classic Scholar Bag">
+                        <button class="quick-view-btn" data-title="Oxford Classic Scholar Bag" data-price="760" data-img="https://tse4.mm.bing.net/th/id/OIP.6skDIPIDsM5Ut5iWe9yauAHaHa?r=0&w=1000&h=1000&rs=1&pid=ImgDetMain&o=7&rm=3">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="product-body">
+                        <span class="product-cat">School Bags</span>
+                        <h3 class="product-title">Oxford Classic Scholar Bag</h3>
+                        <p class="product-desc">Reinforced ballistic weave nylon, reflective safety strips, and water bottle slots.</p>
+                        <div class="product-footer">
+                            <div class="price-box">
+                                <span class="product-price">₹760</span>
+                                <span class="old-price">₹950</span>
+                            </div>
+                            <button class="deal-btn claim-offer" data-title="Oxford Classic Scholar Bag">
+                                <i class="fa-solid fa-tag"></i> Claim Deal
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 2. SCHOOL BAGS - Item 3 -->
+                <article class="product-card" data-category="bags">
+                    <span class="discount-badge">35% OFF</span>
+                    <div class="product-img-wrap">
+                        <img src="https://www.panwaydesign.com/storage/uploads/images/202504/11/1744356062_0pbHnLrGxp.jpg" alt="Junior Orthopedic School Bag">
+                        <button class="quick-view-btn" data-title="Junior Orthopedic School Bag" data-price="487" data-img="https://www.panwaydesign.com/storage/uploads/images/202504/11/1744356062_0pbHnLrGxp.jpg">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="product-body">
+                        <span class="product-cat">School Bags</span>
+                        <h3 class="product-title">Junior Orthopedic School Bag</h3>
+                        <p class="product-desc">Ultra-light frame with curved lumbar support cushioning designed for elementary grades.</p>
+                        <div class="product-footer">
+                            <div class="price-box">
+                                <span class="product-price">₹487</span>
+                                <span class="old-price">₹750</span>
+                            </div>
+                            <button class="deal-btn claim-offer" data-title="Junior Orthopedic School Bag">
+                                <i class="fa-solid fa-tag"></i> Claim Deal
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 3. PEN SETS - Item 1 -->
+                <article class="product-card" data-category="pens">
+                    <span class="discount-badge">BUY 1 GET 1</span>
+                    <div class="product-img-wrap">
+                        <img src="https://cdn11.bigcommerce.com/s-5ko0zosub2/product_images/description/sheaffer/imp_sov_dc13_1.jpg" alt="Royal Sovereign Gold-Nib Pen">
+                        <button class="quick-view-btn" data-title="Royal Sovereign Fountain Pen Set" data-price="280" data-img="https://cdn11.bigcommerce.com/s-5ko0zosub2/product_images/description/sheaffer/imp_sov_dc13_1.jpg">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="product-body">
+                        <span class="product-cat">Pen Sets</span>
+                        <h3 class="product-title">Royal Sovereign Fountain Pen Set</h3>
+                        <p class="product-desc">Gold-tipped iridium nib, smooth ink converter, and blue royal ink refill reservoir.</p>
+                        <div class="product-footer">
+                            <div class="price-box">
+                                <span class="product-price">₹280</span>
+                                <span class="old-price">₹350</span>
+                            </div>
+                            <button class="deal-btn claim-offer" data-title="Royal Sovereign Fountain Pen Set">
+                                <i class="fa-solid fa-tag"></i> Claim Deal
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 3. PEN SETS - Item 2 -->
+                <article class="product-card" data-category="pens">
+                    <span class="discount-badge">20% OFF</span>
+                    <div class="product-img-wrap">
+                        <img src="https://cdn.skapamer.com/img/b6/34/22/75/600x600/b6342275b1fea0f4636f890be51e16ec25.jpg" alt="Archival Rollerball Pen Tri-Pack">
+                        <button class="quick-view-btn" data-title="Archival Rollerball Pen Tri-Pack" data-price="199" data-img="https://cdn.skapamer.com/img/b6/34/22/75/600x600/b6342275b1fea0f4636f890be51e16ec25.jpg">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="product-body">
+                        <span class="product-cat">Pen Sets</span>
+                        <h3 class="product-title">Archival Rollerball Pen Tri-Pack</h3>
+                        <p class="product-desc">Smudge-proof quick-drying liquid gel ink pens tailored for rapid examination writing.</p>
+                        <div class="product-footer">
+                            <div class="price-box">
+                                <span class="product-price">₹199</span>
+                                <span class="old-price">₹250</span>
+                            </div>
+                            <button class="deal-btn claim-offer" data-title="Archival Rollerball Pen Tri-Pack">
+                                <i class="fa-solid fa-tag"></i> Claim Deal
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 3. PEN SETS - Item 3 -->
+                <article class="product-card" data-category="pens">
+                    <span class="discount-badge">25% OFF</span>
+                    <div class="product-img-wrap">
+                        <img src="https://i.pinimg.com/originals/a5/44/ae/a544ae00cb539674f6eb7460a64b2d7a.jpg" alt="Calligraphy Dip Pen Kit">
+                        <button class="quick-view-btn" data-title="Traditional Calligraphy Dip Pen Set" data-price="299" data-img="https://i.pinimg.com/originals/a5/44/ae/a544ae00cb539674f6eb7460a64b2d7a.jpg">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="product-body">
+                        <span class="product-cat">Pen Sets</span>
+                        <h3 class="product-title">Traditional Calligraphy Dip Pen Set</h3>
+                        <p class="product-desc">5 assorted vintage stainless nibs, hand-carved wooden handle, and deep walnut ink.</p>
+                        <div class="product-footer">
+                            <div class="price-box">
+                                <span class="product-price">₹299</span>
+                                <span class="old-price">₹399</span>
+                            </div>
+                            <button class="deal-btn claim-offer" data-title="Traditional Calligraphy Dip Pen Set">
+                                <i class="fa-solid fa-tag"></i> Claim Deal
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 4. GEOMETRY BOXES - Item 1 -->
+                <article class="product-card" data-category="geometry">
+                    <span class="discount-badge">FLAT ₹50 OFF</span>
+                    <div class="product-img-wrap">
+                        <img src="https://5.imimg.com/data5/SELLER/Default/2024/3/399131368/OZ/GR/OD/197076/jometry-box2-1000x1000.jpg" alt="Master Brass Geometry Box">
+                        <button class="quick-view-btn" data-title="Master Solid Brass Geometry Box" data-price="120" data-img="https://5.imimg.com/data5/SELLER/Default/2024/3/399131368/OZ/GR/OD/197076/jometry-box2-1000x1000.jpg">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="product-body">
+                        <span class="product-cat">Geometry Boxes</span>
+                        <h3 class="product-title">Master Solid Brass Geometry Box</h3>
+                        <p class="product-desc">Heavy-duty compass, precision divider, protractor, and non-scratch metal ruler.</p>
+                        <div class="product-footer">
+                            <div class="price-box">
+                                <span class="product-price">₹120</span>
+                                <span class="old-price">₹220</span>
+                            </div>
+                            <button class="deal-btn claim-offer" data-title="Master Solid Brass Geometry Box">
+                                <i class="fa-solid fa-tag"></i> Claim Deal
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 4. GEOMETRY BOXES - Item 2 -->
+                <article class="product-card" data-category="geometry">
+                    <span class="discount-badge">30% OFF</span>
+                    <div class="product-img-wrap">
+                        <img src="https://www.inzoneuae.com/public/uploads/all/pAlqbXtvqiARZlsSCoYTDvvRCuwt9RX0y89E6GJl.png" alt="Technical Drafter Mathematical Tin">
+                        <button class="quick-view-btn" data-title="Technical Drafter Mathematical Tin" data-price="182" data-img="https://www.inzoneuae.com/public/uploads/all/pAlqbXtvqiARZlsSCoYTDvvRCuwt9RX0y89E6GJl.png">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="product-body">
+                        <span class="product-cat">Geometry Boxes</span>
+                        <h3 class="product-title">Technical Drafter Mathematical Tin</h3>
+                        <p class="product-desc">Precision screw compass, micro-adjustment wheel, set squares, and lead refills.</p>
+                        <div class="product-footer">
+                            <div class="price-box">
+                                <span class="product-price">₹182</span>
+                                <span class="old-price">₹260</span>
+                            </div>
+                            <button class="deal-btn claim-offer" data-title="Technical Drafter Mathematical Tin">
+                                <i class="fa-solid fa-tag"></i> Claim Deal
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 4. GEOMETRY BOXES - Item 3 -->
+                <article class="product-card" data-category="geometry">
+                    <span class="discount-badge">20% OFF</span>
+                    <div class="product-img-wrap">
+                        <img src="https://m.media-amazon.com/images/I/71QjqOpFSKL.jpg" alt="Stainless Anti-Rust Geometry Kit">
+                        <button class="quick-view-btn" data-title="Stainless Anti-Rust Geometry Kit" data-price="152" data-img="https://m.media-amazon.com/images/I/71QjqOpFSKL.jpg">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="product-body">
+                        <span class="product-cat">Geometry Boxes</span>
+                        <h3 class="product-title">Stainless Anti-Rust Geometry Kit</h3>
+                        <p class="product-desc">Chrome-finished anti-oxidation drafting instruments in an embossed metal tin.</p>
+                        <div class="product-footer">
+                            <div class="price-box">
+                                <span class="product-price">₹152</span>
+                                <span class="old-price">₹190</span>
+                            </div>
+                            <button class="deal-btn claim-offer" data-title="Stainless Anti-Rust Geometry Kit">
+                                <i class="fa-solid fa-tag"></i> Claim Deal
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 5. COLOR ARTS - Item 1 -->
+                <article class="product-card" data-category="arts">
+                    <span class="discount-badge">25% OFF</span>
+                    <div class="product-img-wrap">
+                        <img src="https://static-01.daraz.com.bd/p/fa73080e44a89824d5ed407aa11cb945.jpg" alt="Artist 36 Watercolor Cake Palette">
+                        <button class="quick-view-btn" data-title="Artist 36 Watercolor Cake Palette" data-price="345" data-img="https://static-01.daraz.com.bd/p/fa73080e44a89824d5ed407aa11cb945.jpg">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="product-body">
+                        <span class="product-cat">Color Arts</span>
+                        <h3 class="product-title">Artist 36 Watercolor Cake Palette</h3>
+                        <p class="product-desc">Pure mineral pigments with water-reservoir blending brush and mixing wells.</p>
+                        <div class="product-footer">
+                            <div class="price-box">
+                                <span class="product-price">₹345</span>
+                                <span class="old-price">₹460</span>
+                            </div>
+                            <button class="deal-btn claim-offer" data-title="Artist 36 Watercolor Cake Palette">
+                                <i class="fa-solid fa-tag"></i> Claim Deal
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 5. COLOR ARTS - Item 2 -->
+                <article class="product-card" data-category="arts">
+                    <span class="discount-badge">30% OFF</span>
+                    <div class="product-img-wrap">
+                        <img src="https://down-sg.img.susercontent.com/file/th-11134207-7ras8-m33ij7rcwa7hd0" alt="72 Soft Core Colored Pencils">
+                        <button class="quick-view-btn" data-title="72 Soft Core Colored Pencils Tin" data-price="419" data-img="https://down-sg.img.susercontent.com/file/th-11134207-7ras8-m33ij7rcwa7hd0">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="product-body">
+                        <span class="product-cat">Color Arts</span>
+                        <h3 class="product-title">72 Soft Core Colored Pencils Tin</h3>
+                        <p class="product-desc">Velvety smooth pigment cores for rich shading, layering, and realistic botanical art.</p>
+                        <div class="product-footer">
+                            <div class="price-box">
+                                <span class="product-price">₹419</span>
+                                <span class="old-price">₹599</span>
+                            </div>
+                            <button class="deal-btn claim-offer" data-title="72 Soft Core Colored Pencils Tin">
+                                <i class="fa-solid fa-tag"></i> Claim Deal
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 5. COLOR ARTS - Item 3 -->
+                <article class="product-card" data-category="arts">
+                    <span class="discount-badge">20% OFF</span>
+                    <div class="product-img-wrap">
+                        <img src="https://canvazo.com/cdn/shop/products/Canvazo-Watercolour-Paper-100_-Cotton-Cold-Pressed-250-GSM-Canvazo-1670328976.jpg?v=1670328977" alt="Cotton Cold-Press Watercolor Pad">
+                        <button class="quick-view-btn" data-title="Cotton Cold-Press Watercolor Pad (300 GSM)" data-price="256" data-img="https://canvazo.com/cdn/shop/products/Canvazo-Watercolour-Paper-100_-Cotton-Cold-Pressed-250-GSM-Canvazo-1670328976.jpg?v=1670328977">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="product-body">
+                        <span class="product-cat">Color Arts</span>
+                        <h3 class="product-title">Cotton Cold-Press Watercolor Pad (300 GSM)</h3>
+                        <p class="product-desc">Acid-free heavy weight textured paper designed for watercolor washes and gouache.</p>
+                        <div class="product-footer">
+                            <div class="price-box">
+                                <span class="product-price">₹256</span>
+                                <span class="old-price">₹320</span>
+                            </div>
+                            <button class="deal-btn claim-offer" data-title="Cotton Cold-Press Watercolor Pad (300 GSM)">
+                                <i class="fa-solid fa-tag"></i> Claim Deal
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html#home" class="logo">
+                    <div class="logo-icon">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <div class="logo-text">
+                        <span>Stationery</span> House
+                        <small>School Books & Supplies</small>
+                    </div>
+                </a>
+                <p>
+                    Serving students, educators, and schools with genuine textbooks, fine writing stationery, and complete kits crafted with royal dedication.
+                </p>
+                <div class="social-row">
+                    <a href="#" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-link" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="index.html#home"><i class="fa-solid fa-angle-right"></i> Home</a>
+                <a href="index.html#books"><i class="fa-solid fa-angle-right"></i> About</a>
+                <a href="index.html#stationery"><i class="fa-solid fa-angle-right"></i> Fine Stationery</a>
+                <a href="index.html#offers"><i class="fa-solid fa-angle-right"></i> Seasonal Offers</a>
+                <a href="#offers"><i class="fa-solid fa-angle-right"></i> Contact</a>
+            </div>
+
+            <div class="footer-links">
+                <h4>Categories</h4>
+                <a href="#special-offers"><i class="fa-solid fa-angle-right"></i> Discounted Books</a>
+                <a href="#special-offers"><i class="fa-solid fa-angle-right"></i> Ergonomic Bags</a>
+                <a href="#special-offers"><i class="fa-solid fa-angle-right"></i> Fountain Pen Sets</a>
+                <a href="#special-offers"><i class="fa-solid fa-angle-right"></i> Brass Geometry Kits</a>
+                <a href="#special-offers"><i class="fa-solid fa-angle-right"></i> Fine Art Colors</a>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Reach Our Desk</h4>
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Badvel Bypass Road, Kadapa,<br>Andhra Pradesh, India
+                </p>
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    +91 93462 54321
+                </p>
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    kasi@stationeryhouse.com
+                </p>
+            </div>
+        </div>
+
+        <div class="copyright-bar">
+            <div class="container copyright-flex">
+                <p>© 2026 Stationery House. All Rights Reserved.</p>
+                <div>
+                    <a href="#" style="margin-right: 15px;">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP -->
+    <a href="#offers" class="back-to-top" aria-label="Scroll to Top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    <!-- QUICK VIEW MODAL -->
+    <div class="modal" id="quickModal">
+        <div class="modal-card">
+            <button class="modal-close" id="closeQuickModal">&times;</button>
+            <div style="height: 240px; border-radius: 10px; overflow: hidden; margin-bottom: 18px;">
+                <img id="quickModalImg" src="" alt="Product Preview" style="height: 100%; width: 100%; object-fit: cover;">
+            </div>
+            <h3 id="quickModalTitle" style="font-size: 22px; margin-bottom: 8px;">Product Title</h3>
+            <h4 id="quickModalPrice" style="color: var(--gold-primary); font-size: 22px; margin-bottom: 15px;">₹0</h4>
+            <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 25px;">
+                Specially marked down for the academic seasonal festival. Authenticity and certified quality guaranteed by Stationery House.
+            </p>
+            <button class="primary-btn" id="modalClaimBtn" style="width: 100%; justify-content: center;">
+                Avail Special Offer Deal
+            </button>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div class="toast-msg" id="toastMsg">
+        Discount applied successfully!
+    </div>
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script>
+        // --- 1. 5-CLIP ANIMATED PROMO SLIDER ---
+        const slides = document.querySelectorAll(".slide");
+        const dots = document.querySelectorAll(".slider-dot");
+        const prevBtn = document.getElementById("sliderPrev");
+        const nextBtn = document.getElementById("sliderNext");
+        let currentSlide = 0;
+        let slideInterval;
+
+        function showSlide(index) {
+            slides.forEach((s, i) => s.classList.toggle("active", i === index));
+            dots.forEach((d, i) => d.classList.toggle("active", i === index));
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            let nextIndex = (currentSlide + 1) % slides.length;
+            showSlide(nextIndex);
+        }
+
+        function prevSlide() {
+            let prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(prevIndex);
+        }
+
+        function startSlideTimer() {
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+
+        function resetSlideTimer() {
+            clearInterval(slideInterval);
+            startSlideTimer();
+        }
+
+        nextBtn.addEventListener("click", () => {
+            nextSlide();
+            resetSlideTimer();
+        });
+
+        prevBtn.addEventListener("click", () => {
+            prevSlide();
+            resetSlideTimer();
+        });
+
+        dots.forEach(dot => {
+            dot.addEventListener("click", () => {
+                const target = Number(dot.dataset.slide);
+                showSlide(target);
+                resetSlideTimer();
+            });
+        });
+
+        startSlideTimer();
+
+        // --- 2. MOBILE MENU & ACCORDION HOME DROPDOWN ---
+        const menuBtn = document.getElementById("menuBtn");
+        const navLinks = document.getElementById("navLinks");
+        const homeDropdown = document.getElementById("homeDropdown");
+        const homeToggle = document.getElementById("homeToggle");
+
+        menuBtn.addEventListener("click", () => {
+            navLinks.classList.toggle("mobile-open");
+            const icon = menuBtn.querySelector("i");
+            if (navLinks.classList.contains("mobile-open")) {
+                icon.className = "fa-solid fa-xmark";
+            } else {
+                icon.className = "fa-solid fa-bars";
+                homeDropdown.classList.remove("mobile-open-drop");
+            }
+        });
+
+        // Toggle sub-menu accordion on tablet/mobile screens
+        homeToggle.addEventListener("click", (e) => {
+            if (window.innerWidth <= 1050) {
+                e.preventDefault();
+                const isOpen = homeDropdown.classList.toggle("mobile-open-drop");
+                homeToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+            }
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener("click", (e) => {
+            if (!homeDropdown.contains(e.target)) {
+                homeDropdown.classList.remove("mobile-open-drop");
+                homeToggle.setAttribute("aria-expanded", "false");
+            }
+        });
+
+        // --- 3. DARK / LIGHT THEME TOGGLE (Changes Body, Header & Footer) ---
+        const themeBtn = document.getElementById("themeBtn");
+
+        function applyTheme(isDark) {
+            if (isDark) {
+                document.body.classList.add("dark");
+                themeBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+            } else {
+                document.body.classList.remove("dark");
+                themeBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
+            }
+        }
+
+        themeBtn.addEventListener("click", () => {
+            const isDark = !document.body.classList.contains("dark");
+            applyTheme(isDark);
+            localStorage.setItem("stationery_theme", isDark ? "dark" : "light");
+        });
+
+        // Initialize Theme from localStorage
+        const savedTheme = localStorage.getItem("stationery_theme");
+        if (savedTheme === "dark") {
+            applyTheme(true);
+        }
+
+        // --- 4. RTL / LTR TOGGLE ---
+        const directionBtn = document.getElementById("directionBtn");
+
+        function setDirection(dir) {
+            document.documentElement.setAttribute("dir", dir);
+            directionBtn.querySelector("span").textContent = dir === "rtl" ? "LTR" : "RTL";
+            localStorage.setItem("stationery_dir", dir);
+        }
+
+        directionBtn.addEventListener("click", () => {
+            const currentDir = document.documentElement.getAttribute("dir") || "ltr";
+            const newDir = currentDir === "rtl" ? "ltr" : "rtl";
+            setDirection(newDir);
+        });
+
+        const savedDir = localStorage.getItem("stationery_dir");
+        if (savedDir) {
+            setDirection(savedDir);
+        }
+
+        // --- 5. CATEGORY FILTER (ALL, BOOKS, BAGS, PENS, GEOMETRY, ARTS) ---
+        const filterTabs = document.querySelectorAll(".filter-tab");
+        const productCards = document.querySelectorAll(".product-card");
+
+        filterTabs.forEach(tab => {
+            tab.addEventListener("click", () => {
+                filterTabs.forEach(t => t.classList.remove("active"));
+                tab.classList.add("active");
+
+                const filter = tab.dataset.filter;
+
+                productCards.forEach(card => {
+                    if (filter === "all" || card.dataset.category === filter) {
+                        card.style.display = "flex";
+                    } else {
+                        card.style.display = "none";
+                    }
+                });
+            });
+        });
+
+        // --- 6. TOAST UTILITY & VOUCHER COPY ---
+        const toastMsg = document.getElementById("toastMsg");
+        let toastTimeout;
+
+        function showToast(message) {
+            toastMsg.textContent = message;
+            toastMsg.classList.add("show");
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toastMsg.classList.remove("show");
+            }, 2500);
+        }
+
+        document.querySelectorAll(".copy-code").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const code = btn.dataset.code;
+                navigator.clipboard.writeText(code).then(() => {
+                    showToast(`Coupon code "${code}" copied to clipboard!`);
+                }).catch(() => {
+                    showToast(`Code: ${code}`);
+                });
+            });
+        });
+
+        document.querySelectorAll(".claim-offer").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const title = btn.dataset.title;
+                showToast(`Deal claimed for: ${title}`);
+            });
+        });
+
+        // --- 7. QUICK VIEW MODAL LOGIC ---
+        const quickModal = document.getElementById("quickModal");
+        const closeQuickModal = document.getElementById("closeQuickModal");
+        const quickModalImg = document.getElementById("quickModalImg");
+        const quickModalTitle = document.getElementById("quickModalTitle");
+        const quickModalPrice = document.getElementById("quickModalPrice");
+        const modalClaimBtn = document.getElementById("modalClaimBtn");
+
+        document.querySelectorAll(".quick-view-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const title = btn.dataset.title;
+                const price = btn.dataset.price;
+                const img = btn.dataset.img;
+
+                quickModalTitle.textContent = title;
+                quickModalPrice.textContent = "₹" + price;
+                quickModalImg.src = img;
+
+                quickModal.classList.add("show");
+                document.body.style.overflow = "hidden";
+            });
+        });
+
+        modalClaimBtn.addEventListener("click", () => {
+            showToast(`Offer registered for ${quickModalTitle.textContent}!`);
+            quickModal.classList.remove("show");
+            document.body.style.overflow = "";
+        });
+
+        closeQuickModal.addEventListener("click", () => {
+            quickModal.classList.remove("show");
+            document.body.style.overflow = "";
+        });
+
+        quickModal.addEventListener("click", (e) => {
+            if (e.target === quickModal) {
+                quickModal.classList.remove("show");
+                document.body.style.overflow = "";
+            }
+        });
+
+        // ESC Key to Close Modal
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                quickModal.classList.remove("show");
+                document.body.style.overflow = "";
+            }
+        });
+    </script>
+</body>
+</html>
